@@ -9,11 +9,11 @@ public class DeepCopy {
 
 			for (Field field : c.getDeclaredFields()) {
 				field.setAccessible(true);
-				try { 
+				try {
 					if (isPrimitive(field.getType())) {
 						field.set(to, field.get(from));
 					} else {
-						if(field.get(from) != null){
+						if (field.get(from) != null) {
 							copy(field.get(from), field.get(to));
 						}
 					}
@@ -25,7 +25,8 @@ public class DeepCopy {
 		} while (c != null);
 	}
 
-	private static boolean isPrimitive(Class<?> c) { 
-		return c.isPrimitive() || c == String.class || c == Integer.class;
+	private static boolean isPrimitive(Class<?> c) {
+		return c.isPrimitive() || c == String.class || c == Integer.class
+				|| c == Double.class || c == Boolean.class;
 	}
 }

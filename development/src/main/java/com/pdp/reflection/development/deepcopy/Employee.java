@@ -2,7 +2,7 @@ package com.pdp.reflection.development.deepcopy;
 
 public class Employee extends User{
 	private double salary;
-	private Integer rate;
+	private int rate;
 	protected String place;
 	public String position;
 	private Address address;
